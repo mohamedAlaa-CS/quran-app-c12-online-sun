@@ -1,8 +1,7 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:quran_app_c12_online_sun/config/theme/my_theme.dart';
 import 'package:quran_app_c12_online_sun/core/routes_manager.dart';
+import 'package:quran_app_c12_online_sun/presentation/screens/hadith_details_screen/hadith_details_screen.dart';
 import 'package:quran_app_c12_online_sun/presentation/screens/home/home_screen.dart';
 import 'package:quran_app_c12_online_sun/presentation/screens/quran_details_screen/quran_details_screen.dart';
 import 'package:quran_app_c12_online_sun/presentation/screens/splash/splash_screen.dart';
@@ -21,6 +20,7 @@ class MyApp extends StatelessWidget {
         RoutesManager.homeRoute: (_) => HomeScreen(),
         RoutesManager.splashRoute: (_) => SplashScreen(),
         RoutesManager.quranDetailsRoute: (_) => QuranDetailsScreen(),
+        RoutesManager.hadithDetailsRoute: (_) => HadithDetailsScreen(),
       },
       initialRoute: RoutesManager.splashRoute,
     );
