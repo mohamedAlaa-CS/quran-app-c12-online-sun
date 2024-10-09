@@ -28,16 +28,33 @@ class MyTheme {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
       indicatorColor: Colors.white,
+      bottomSheetTheme: BottomSheetThemeData(
+          elevation: 12,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(12),
+            topRight: Radius.circular(12),
+          )),
+          backgroundColor: ColorsManager.goldColor.withOpacity(0.7)),
       textTheme: const TextTheme(
-        headlineMedium: TextStyle(
-            fontSize: 21,
-            fontWeight: FontWeight.w500,
-            color: Color(0xFF242424)),
-        titleMedium: TextStyle(
-            fontSize: 19,
-            color: Color(0xFF242424),
-            fontWeight: FontWeight.w400),
-        bodyMedium: TextStyle(
-            fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white),
-      ));
+          headlineMedium: TextStyle(
+              fontSize: 21,
+              fontWeight: FontWeight.w500,
+              color: Color(0xFF242424)),
+          titleMedium: TextStyle(
+              fontSize: 19,
+              color: Color(0xFF242424),
+              fontWeight: FontWeight.w400),
+          bodyMedium: TextStyle(
+              fontSize: 20, fontWeight: FontWeight.w400, color: Colors.white),
+          labelMedium: TextStyle(
+              fontSize: 16,
+              color: ColorsManager.goldColor,
+              fontWeight: FontWeight.w500),
+          labelSmall: TextStyle(
+              fontSize: 14,
+              color: ColorsManager.goldColor,
+              fontWeight: FontWeight.normal),
+          displayMedium: TextStyle(
+              fontSize: 21, color: Colors.white, fontWeight: FontWeight.w400)));
 }

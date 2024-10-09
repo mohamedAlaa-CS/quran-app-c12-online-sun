@@ -55,7 +55,7 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
         await rootBundle.loadString('assets/files/$index.txt'); // blocking
 
     setState(() {
-      verses = fileContent.trim().split('\n');
+      verses = fileContent.trim().split('\n'); // verses list has a data
     });
   }
 }
