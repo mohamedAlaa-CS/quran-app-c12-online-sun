@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/config/theme/my_theme.dart';
-import 'package:quran_app_c12_online_sun/core/routes_manager.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/hadith_details_screen/hadith_details_screen.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/home_screen.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/quran_details_screen/quran_details_screen.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/splash/splash_screen.dart';
+import "package:flutter/material.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:quran_app_c12_online_sun/config/theme/my_theme.dart";
+import "package:quran_app_c12_online_sun/core/routes_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/hadith_details_screen/hadith_details_screen.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/home_screen.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/quran_details_screen/quran_details_screen.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/splash/splash_screen.dart";
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,6 +24,12 @@ class MyApp extends StatelessWidget {
         RoutesManager.hadithDetailsRoute: (_) => HadithDetailsScreen(),
       },
       initialRoute: RoutesManager.splashRoute,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: const [
+        Locale("ar"),
+        Locale("en"),
+      ],
+      locale: Locale('ar'),
     );
   }
 }

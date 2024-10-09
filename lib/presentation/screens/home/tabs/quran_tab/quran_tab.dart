@@ -1,9 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/core/assets_manager.dart';
-import 'package:quran_app_c12_online_sun/core/colors_manager.dart';
-import 'package:quran_app_c12_online_sun/core/strings_manger.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/widgets/quran_header_widget.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/widgets/sura_name_widget.dart';
+import "package:flutter/material.dart";
+import "package:quran_app_c12_online_sun/core/assets_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/widgets/quran_header_widget.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/widgets/sura_name_widget.dart";
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});

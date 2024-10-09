@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/core/assets_manager.dart';
-import 'package:quran_app_c12_online_sun/core/colors_manager.dart';
-import 'package:quran_app_c12_online_sun/core/strings_manger.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/hadith_tab.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/radio_tab/radio_tab.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/settings_tab.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/tasbeh_tab/tasbeh_tab.dart';
+import "package:flutter/material.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:quran_app_c12_online_sun/core/assets_manager.dart";
+import "package:quran_app_c12_online_sun/core/colors_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/hadith_tab.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/radio_tab/radio_tab.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/settings_tab.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/tasbeh_tab/tasbeh_tab.dart";
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});
@@ -37,9 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ))),
       child: Scaffold(
           appBar: AppBar(
-            title: const Text(
-              StringsManager.appTitle,
-            ),
+            title: Text(AppLocalizations.of(context)!.appTitle),
           ),
           bottomNavigationBar: BottomNavigationBar(
               currentIndex: selectedIndex,
@@ -53,23 +51,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 BottomNavigationBarItem(
                     backgroundColor: ColorsManager.goldColor,
                     icon: ImageIcon(AssetImage(AssetsManager.quranIcon)),
-                    label: StringsManager.quranLabel),
+                    label: AppLocalizations.of(context)!.quranTab),
                 BottomNavigationBarItem(
                     backgroundColor: ColorsManager.goldColor,
                     icon: ImageIcon(AssetImage(AssetsManager.hadithIcon)),
-                    label: StringsManager.hadithLabel),
+                    label: AppLocalizations.of(context)!.hadithHeader),
                 BottomNavigationBarItem(
                     backgroundColor: ColorsManager.goldColor,
                     icon: ImageIcon(AssetImage(AssetsManager.tasbehIcon)),
-                    label: StringsManager.tasbehLabel),
+                    label: AppLocalizations.of(context)!.sebhaTab),
                 BottomNavigationBarItem(
                     backgroundColor: ColorsManager.goldColor,
                     icon: ImageIcon(AssetImage(AssetsManager.radioIcon)),
-                    label: StringsManager.radioLabel),
+                    label: AppLocalizations.of(context)!.radioTab),
                 BottomNavigationBarItem(
                     backgroundColor: ColorsManager.goldColor,
                     icon: Icon(Icons.settings),
-                    label: StringsManager.settingsLabel)
+                    label: AppLocalizations.of(context)!.settingsTab)
               ]),
           body: tabs[selectedIndex]),
     );

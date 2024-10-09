@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:quran_app_c12_online_sun/core/assets_manager.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/widgets/hadith_header_widget.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/widgets/hadith_title_widget.dart';
+import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "package:quran_app_c12_online_sun/core/assets_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/widgets/hadith_header_widget.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/widgets/hadith_title_widget.dart";
 
 class HadithTab extends StatefulWidget {
   HadithTab({super.key});
@@ -22,7 +22,7 @@ class _HadithTabState extends State<HadithTab> {
         children: [
           Expanded(
               flex: 1, child: Image.asset(AssetsManager.hadithHeaderImage)),
-          HadithHeaderWidget(),
+          const HadithHeaderWidget(),
           Expanded(
             flex: 3,
             child: hadithList.isEmpty
@@ -43,21 +43,21 @@ class _HadithTabState extends State<HadithTab> {
   }
 
   String add(String n1, String n2) {
-    return n1 + n2; // '1010'
+    return n1 + n2; // "1010"
   }
 
   void readHadithFile() async {
     // 2 sec // 3sec  // 10 sec
     var fileContent =
-        await rootBundle.loadString('assets/files/ahadeth.txt'); // blocking
-    List<String> hadithItemList = fileContent.trim().split('#'); // 50 hadith
+        await rootBundle.loadString("assets/files/ahadeth.txt"); // blocking
+    List<String> hadithItemList = fileContent.trim().split("#"); // 50 hadith
 
     for (int i = 0; i < hadithItemList.length; i++) {
       String hadithItem = hadithItemList[i];
-      List<String> hadithLines = hadithItem.trim().split('\n');
+      List<String> hadithLines = hadithItem.trim().split("\n");
       String title = hadithLines[0];
       hadithLines.removeAt(0);
-      String content = hadithLines.join('\n');
+      String content = hadithLines.join("\n");
       Hadith hadith = Hadith(title: title, content: content);
       hadithList.add(hadith);
     }
@@ -65,10 +65,10 @@ class _HadithTabState extends State<HadithTab> {
     setState(() {});
 
     // String hadithItem = hadithItemList[0];
-    // List<String>hadithLines = hadithItem.split('\n');
+    // List<String>hadithLines = hadithItem.split("\n");
     // String title = hadithLines[0];
     // hadithLines.removeAt(0);
-    // String content = hadithLines.join('\n');
+    // String content = hadithLines.join("\n");
     // print(title);
     // print(content);
   }

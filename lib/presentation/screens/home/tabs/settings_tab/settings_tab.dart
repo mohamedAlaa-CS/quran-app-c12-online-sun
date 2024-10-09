@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/widgets/language_bottom_sheet.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart';
+import "package:flutter/material.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/widgets/language_bottom_sheet.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/settings_tab/widgets/theme_bottom_sheet.dart";
 
 class SettingsTab extends StatelessWidget {
   const SettingsTab({super.key});
@@ -13,7 +14,7 @@ class SettingsTab extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Theme',
+            AppLocalizations.of(context)!.theme,
             style: Theme.of(context).textTheme.labelMedium,
           ),
           SizedBox(
@@ -31,14 +32,14 @@ class SettingsTab extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                         color: Theme.of(context).dividerColor, width: 2)),
-                child: Text('Light',
+                child: Text(AppLocalizations.of(context)!.light,
                     style: Theme.of(context).textTheme.labelSmall)),
           ),
           SizedBox(
             height: 16,
           ),
           Text(
-            'Language',
+            AppLocalizations.of(context)!.language,
             style: Theme.of(context).textTheme.labelMedium,
           ),
           SizedBox(
@@ -56,7 +57,7 @@ class SettingsTab extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                         color: Theme.of(context).dividerColor, width: 2)),
-                child: Text('English',
+                child: Text(AppLocalizations.of(context)!.english,
                     style: Theme.of(context).textTheme.labelSmall)),
           )
         ],
