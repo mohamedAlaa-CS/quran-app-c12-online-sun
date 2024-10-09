@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/core/assets_manager.dart';
-import 'package:quran_app_c12_online_sun/core/routes_manager.dart';
+import "package:flutter/material.dart";
+import "package:quran_app_c12_online_sun/core/assets_manager.dart";
+import "package:quran_app_c12_online_sun/core/routes_manager.dart";
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({super.key});

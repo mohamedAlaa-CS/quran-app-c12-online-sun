@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:quran_app_c12_online_sun/core/assets_manager.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/quran_details_screen/widgets/verse_widget.dart';
+import "package:flutter/material.dart";
+import "package:flutter/services.dart";
+import "package:quran_app_c12_online_sun/core/assets_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/quran_details_screen/widgets/verse_widget.dart";
 
 class QuranDetailsScreen extends StatefulWidget {
   QuranDetailsScreen({super.key});
@@ -52,10 +52,10 @@ class _QuranDetailsScreenState extends State<QuranDetailsScreen> {
   // sync -> bloc thread // blocking
   void readQuranFile(int index) async {
     String fileContent =
-        await rootBundle.loadString('assets/files/$index.txt'); // blocking
+        await rootBundle.loadString("assets/files/$index.txt"); // blocking
 
     setState(() {
-      verses = fileContent.trim().split('\n'); // verses list has a data
+      verses = fileContent.trim().split("\n"); // verses list has a data
     });
   }
 }

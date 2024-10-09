@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/hadith_tab.dart';
+import "package:flutter/material.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/hadith_tab/hadith_tab.dart";
 
-import '../../../core/assets_manager.dart';
+import "../../../core/assets_manager.dart";
 
 class HadithDetailsScreen extends StatelessWidget {
   const HadithDetailsScreen({super.key});
@@ -19,7 +20,7 @@ class HadithDetailsScreen extends StatelessWidget {
               ))),
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Islami'),
+          title: Text(AppLocalizations.of(context)!.appTitle),
         ),
         body: Card(
           child: SingleChildScrollView(

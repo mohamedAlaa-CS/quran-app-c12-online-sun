@@ -1,7 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:quran_app_c12_online_sun/core/colors_manager.dart';
-import 'package:quran_app_c12_online_sun/core/routes_manager.dart';
-import 'package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart';
+import "package:flutter/material.dart";
+import "package:quran_app_c12_online_sun/core/routes_manager.dart";
+import "package:quran_app_c12_online_sun/presentation/screens/home/tabs/quran_tab/quran_tab.dart";
 
 class SuraNameWidget extends StatelessWidget {
   // String suraName;

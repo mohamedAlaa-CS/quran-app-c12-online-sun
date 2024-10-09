@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class LanguageBottomSheet extends StatefulWidget {
   const LanguageBottomSheet({super.key});
@@ -16,7 +16,7 @@ class _LanguageBottomSheetState extends State<LanguageBottomSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedItemThemeWidget('English'),
+          buildSelectedItemThemeWidget("English"),
           SizedBox(
             height: 8,
           ),

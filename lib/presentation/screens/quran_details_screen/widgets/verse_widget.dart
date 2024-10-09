@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import "package:flutter/material.dart";
 
 class VerseWidget extends StatelessWidget {
   String verse;
