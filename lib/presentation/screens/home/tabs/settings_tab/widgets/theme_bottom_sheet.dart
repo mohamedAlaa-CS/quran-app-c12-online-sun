@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:quran_app_c12_online_sun/providers/theme_provider.dart';
 
 class ThemeBottomSheet extends StatefulWidget {
   const ThemeBottomSheet({super.key});
@@ -11,17 +13,34 @@ class ThemeBottomSheet extends StatefulWidget {
 class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   @override
   Widget build(BuildContext context) {
+    var myProvider = Provider.of<ThemeProvider>(context);
     return Container(
       padding: EdgeInsets.all(12),
       width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          buildSelectedItemThemeWidget(AppLocalizations.of(context)!.light),
-          SizedBox(
+          InkWell(
+              onTap: () {
+                myProvider.changeAppTheme(ThemeMode.light);
+              },
+              child: myProvider.currentTheme == ThemeMode.light
+                  ? buildSelectedItemThemeWidget(
+                      AppLocalizations.of(context)!.light)
+                  : buildUnSelectedItemThemeWidget(
+                      AppLocalizations.of(context)!.light)),
+          const SizedBox(
             height: 8,
           ),
-          buildUnSelectedItemThemeWidget(AppLocalizations.of(context)!.dark),
+          InkWell(
+              onTap: () {
+                myProvider.changeAppTheme(ThemeMode.dark);
+              },
+              child: myProvider.currentTheme == ThemeMode.dark
+                  ? buildSelectedItemThemeWidget(
+                      AppLocalizations.of(context)!.dark)
+                  : buildUnSelectedItemThemeWidget(
+                      AppLocalizations.of(context)!.dark)),
         ],
       ),
     );
@@ -34,7 +53,6 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
         Spacer(),
         Icon(
           Icons.check,
-          color: Colors.white,
           size: 28,
         )
       ],
@@ -42,12 +60,14 @@ class _ThemeBottomSheetState extends State<ThemeBottomSheet> {
   }
 
   Widget buildUnSelectedItemThemeWidget(String unSelectedTheme) {
-    return Text(
-      unSelectedTheme,
-      style: Theme.of(context)
-          .textTheme
-          .displayMedium
-          ?.copyWith(color: Colors.black),
+    return Row(
+      children: [
+        Text(unSelectedTheme,
+            style: Theme.of(context)
+                .textTheme
+                .displayMedium
+                ?.copyWith(color: Theme.of(context).colorScheme.secondary)),
+      ],
     );
   }
 }
